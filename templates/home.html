@@ -1,3 +1,49 @@
-<h1>
-Hello World
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo app</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+
+</head>
+<body bgcolor="beige">
+    <div style="margin-top: 50px;" class="ui container">
+        <h1 class="ui center aligned header"><b>STROKE DISEASE PREDICTION</b></h1>
+
+        <!--Main Input for Receiving Query into our ML-->
+        <form class="ui form" action="{{ url_for('predict')}}"method="post">
+           
+            <label for="age" "font-family: Roboto, Lato, sans-serif" id="roboto-plus-backups">Age</label>
+            <input type="text" name="age" placeholder="AGE" required="required" /><br><br>
+            <label for="sex">Sex(1=male & 0=female)</label>
+            <input type="text" name="sex" placeholder="SEX(1 or 0)" required="required" /><br><br>
+            <label for="cholesterol level">Cholesterol Level</label>
+            <input type="text" name="cholesterol level" placeholder="Cholesterol Level" required="required" /><br><br>
+            <label for="max heart rate">Maximum Heart Rate(values between 60 and 202)</label>
+            <input type="text" name="max heart rate" placeholder="Max Heart Rate(Value between 60 and 202)" required="required" /><br><br>
+            <label for="oldpeak">Oldpeak(between 0.0 to 2.0)</label>
+            <input type="text" name="oldpeak" placeholder="Oldpeak(0.0 to 2.0)" required="required" /><br><br>
+            <label for="exercise-induced angina">Exercise-Induced Angina (Yes=1 & No=0)</label>
+            <input type="text" name="exercise-induced angina" placeholder="1 or 0" required="required" /><br><br>
+            <label for="asymptomatic chest pain">Asymptomatic Chest Pain (Yes=1 & No=0)</label>
+            <input type="text" name="asymptomatic chest pain" placeholder="1 or 0" required="required" /><br><br>
+            <label for="atypical angina chest pain">Atypical Angina Chest Pain(Yes=1 & No=0)</label>
+            <input type="text" name="atypical angina chest pain" placeholder="1 or 0" required="required" /><br><br>
+            <label for="flat slope">Flat Slope of the Peak Exercise ST Segment(Yes=1 & No=0)</label>
+            <input type="text" name="flat slope" placeholder="1 or 0" required="required" /><br><br>
+            <label for="up slope">Up Slope of the Peak Exercise ST Segment(Yes=1 & No=0)</label>
+            <input type="text" name="up slope" placeholder="1 or 0" required="required" /><br><br><br>
+
+            <button class="ui blue button" type="submit">Predict</button>
+        </form>
+        <br>
+        <br>
+    </div>
+    <div class="ui floating message">
+    <b>{{prediction_text}}</b><br><br>
+    </div>
+    <br><br>
+</body>
+</html>
