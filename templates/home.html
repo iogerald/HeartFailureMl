@@ -7,8 +7,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
 
+    <style>
+        body {
+            background-image: url('C:/Users/USER/Pictures/minimal/wp4804840-minimalist-tumblr-wallpapers.png');
+            
+        }
+    </style>
+
 </head>
-<body bgcolor="beige">
+
+<body>
     <div style="margin-top: 50px;" class="ui container">
         <h1 class="ui center aligned header"><b>STROKE DISEASE PREDICTION</b></h1>
 
@@ -40,10 +48,24 @@
         </form>
         <br>
         <br>
+
+        <div class="ui info message">
+            <i class="close icon"></i>
+            <div class="header">
+              You need to know
+            </div>
+            <ul class="list">
+              <li>Stroke occurrence is 1.</li>
+              <li>Stroke absence is 0</li>
+            </ul>
+        </div>
+        <br><br>
     </div>
     <div class="ui floating message">
     <b>{{prediction_text}}</b><br><br>
     </div>
     <br><br>
+
+
 </body>
 </html>

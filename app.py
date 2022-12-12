@@ -28,7 +28,7 @@ def predict():
     final_input=std.transform(np.array(data).reshape(1,-1))
     print(final_input)
     output=rfmodel.predict(final_input)[0]
-    return render_template("home.html", prediction_text="Stroke presence is = 1 \n Stroke absence is = 0 \n The stroke occurrence is {}".format(output))
+    return render_template("home.html", prediction_text="The stroke occurrence is {}".format(output))
 
 if __name__=="__main__":
     with app.app_context():
